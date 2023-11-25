@@ -6,21 +6,30 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Login from "./components/Login";
+
+import Container from "./components/Container";
+import FormProvider from "./context/FormContexts"
+import Plans from "./components/Plans";
+import AddOns from "./components/AddOns"
+import Summary from "./components/Summary"
+
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Container />} />
+        <Route path="/plans" element={<Plans />} />
+        <Route path="/addons" element={<AddOns />} />
+        <Route path="/summary" element={<Summary />} />
       </>
     )
   );
 
   return (
-    <div>
+    <FormProvider>
       <RouterProvider router={router} />
-    </div>
+    </FormProvider>
   );
 };
 
