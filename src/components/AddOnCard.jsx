@@ -6,12 +6,19 @@ const AddOnCard = ({ title, description, amount }) => {
 
   const handleChange = () => {
     setChecked(!checked);
+
+    Object.keys(localStorage).forEach((key) => {
+      if (key.includes("Online service") || key.includes("Larger storage") || key.includes("Customizable Profile")) {
+        localStorage.removeItem(key);
+      }
+    });
     // Save the checked state, amount, and title to local storage
-    localStorage.setItem(title, JSON.stringify(!checked));
-    localStorage.setItem(`${title}`, amount);
+    localStorage.setItem("addons", title);
+    localStorage.setItem("addonplan", amount);
+
   };
   const cardStyle = {
-    backgroundColor: checked ? "gray" : "white",
+    backgroundColor: checked ? "#E6E6FA" : "white",
     border: `2px solid ${checked ? "black" : "gray"}`,
   };
   return (
@@ -32,7 +39,7 @@ const AddOnCard = ({ title, description, amount }) => {
           <h4>{description}</h4>
         </div>
       </div>
-      <p>${amount}/mo</p>
+      <p className="pt-[15px]">${amount}/mo</p>
     </div>
   );
 };

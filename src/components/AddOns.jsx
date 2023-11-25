@@ -31,8 +31,8 @@ const AddOns = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="w-[500px] mx-auto pt-[40px]">
-        <h1 className="font-bold text-[30px]">Pick Add-Ons</h1>
+      <div className="w-[490px] mx-auto pt-[40px]">
+        <h1 className="font-bold text-[20px]">Pick Add-Ons</h1>
         <h3>Add-on helps enhance your gaming experience</h3>
       </div>
       <div className="flex flex-col justify-between py-[20px] w-[500px] mx-auto">

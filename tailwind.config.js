@@ -28,7 +28,7 @@ export default {
       'primary': '#632A7E',
      
       'primary-bg':"#ECD8EA",
-      'bg-grey':'#F6F6F6',
+      'bg-grey':'#E6E6FA',
       'text-blue':'#3973D4',
       'button-inactive':'#F7F0F7',
       'button-hover':'#280E3B',

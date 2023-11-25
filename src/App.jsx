@@ -5,14 +5,12 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-
-
 import Container from "./components/Container";
-import FormProvider from "./context/FormContexts"
+import FormProvider from "./context/FormContexts";
 import Plans from "./components/Plans";
-import AddOns from "./components/AddOns"
-import Summary from "./components/Summary"
-
+import AddOns from "./components/AddOns";
+import Summary from "./components/Summary";
+import Submitted from "./components/Submitted";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -22,6 +20,7 @@ const App = () => {
         <Route path="/plans" element={<Plans />} />
         <Route path="/addons" element={<AddOns />} />
         <Route path="/summary" element={<Summary />} />
+        <Route path="/submitted" element={<Submitted />} />
       </>
     )
   );

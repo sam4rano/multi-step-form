@@ -7,21 +7,16 @@ import Pro from "../assets/images/pro.svg";
 import { useNavigate, Link } from "react-router-dom";
 
 const Plans = () => {
-  const [checked, setChecked] = useState(true);
-  const [selectedPlan, setSelectedPlan] = useState(null); 
+  const [checked, setChecked] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+  
  
   const navigate = useNavigate();
 
   const handleChange = () => {
     setChecked(!checked);
     setSelectedPlan(null);
-
-    dataPlans.forEach((plan) => {
-      const monthlyKey = `${plan.title}(monthly)`;
-      const yearlyKey = `${plan.title}(yearly)`;
-      localStorage.removeItem(monthlyKey);
-      localStorage.removeItem(yearlyKey);
-    });
+   
   };
   const dataPlans = [
     {
@@ -46,14 +41,22 @@ const Plans = () => {
       yearlyCost: 150,
     },
   ];
+
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/addons");
   };
+
+  const handleCardClick = (planId) => {
+    setSelectedPlan((prevSelectedPlan) => (prevSelectedPlan === planId ? null : planId));
+  };
+  
+  
   return (
-    <form className="py-[50px]" onSubmit={handleSubmit}>
-      <div className="w-[500px] mx-auto">
-        <h1 className="font-bold">SELECT YOUR PLANS</h1>
+    <form className="py-[50px] " onSubmit={handleSubmit}>
+      <div className="w-[580px] mx-auto">
+        <h1 className="font-bold text-[20px]">SELECT YOUR PLANS</h1>
         <h3>You have the option of monthly or yearly billings</h3>
       </div>
       <div className="flex flex-row justify-center py-[20px] w-[500px] mx-auto">
@@ -65,21 +68,23 @@ const Plans = () => {
             amount={checked ? plan.yearlyCost : plan.monthlyCost}
             months={checked ? "2 months free" : null}
             isClicked={selectedPlan === plan.id}
+            onClick={() => handleCardClick(plan.id)}
+            
           />
         ))}
       </div>
-      <div className="w-[500px] mx-auto">
-        <div className="flex justify-around mx-auto bg-grey">
-          <label>Monthly</label>
+      <div className="max-w-[590px] mx-auto bg-bg-grey rounded-[10px]">
+        <div className="flex justify-center mx-auto ">
+          <label className="pt-[10px]">Monthly</label>
           <Switch
             checked={checked}
             onChange={handleChange}
             inputProps={{ "aria-label": "controlled" }}
           />
-          <label>Yearly</label>
+          <label className="pt-[10px]">Yearly</label>
         </div>
       </div>
-      <div className="flex flex-row justify-between mx-auto w-[500px] pt-[40px]">
+      <div className="flex flex-row justify-between mx-auto pt-[40px] max-w-[580px]">
         <Link to="/">Go Back</Link>
         <button
           type="submit"
