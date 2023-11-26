@@ -59,21 +59,3 @@ const Sidebar = ({ setActiveStep }) => {
 };
 
 export default Sidebar;
-
-
-
-
-  // const getStepStyle = (step) => {
-  //   return {
-  //     backgroundColor: activeStep === step ? "#333" : "transparent",
-  //     color: activeStep === step ? "#fff" : "#333",
-  //     cursor: "pointer",
-  //   };
-  // };
-
-  // const handleItemClick = (step) => {
-  //   onSidebarClick(step);
-  //   setActiveStep(step);
-  //onClick={() => handleItemClick(1)}
-  //style={getStepStyle(1)}
-  // };

@@ -6,6 +6,7 @@ import Advance from "../assets/images/advanced.svg";
 import Pro from "../assets/images/pro.svg";
 import Sidebar from "./Sidebar";
 import { useNavigate, Link } from "react-router-dom";
+import imgMobile from "../assets/images/mobile.svg"
 
 const Plans = () => {
   const [checked, setChecked] = useState(false);
@@ -55,10 +56,16 @@ const Plans = () => {
   
   
   return (
-    <div className="flex flex-row">
-      <Sidebar />
+    <div className="flex flex-row md:flex-col">
+      <div className="">
 
-    <form className="py-[50px] pl-[70px] " onSubmit={handleSubmit}>
+      </div>
+        <Sidebar />
+      <div className="lg:hidden">
+        <img src={imgMobile} alt="img" />
+      </div>
+
+    <form className="mx-auto pt-[50px]" onSubmit={handleSubmit}>
       <div className="w-[580px] mx-auto">
         <h1 className="font-bold text-[20px]">SELECT YOUR PLANS</h1>
         <h3>You have the option of monthly or yearly billings</h3>

@@ -7,7 +7,7 @@ const Submitted = () => {
     <div className="flex flex-row">
       <Sidebar />
 
-      <div className="w-[500px] pl-[100px]">
+      <div className="w-[500px] mx-auto">
         <div className="pt-[150px] flex flex-col justify-between mx-auto">
           <img src={SubImage} alt="submitted" className="w-[50px] h-[50px] mx-auto"/> 
           <h1 className="font-bold text-[30px] text-center">Thank You</h1>

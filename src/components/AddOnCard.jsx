@@ -1,26 +1,19 @@
 import { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 
-const AddOnCard = ({ title, description, amount }) => {
+const AddOnCard = ({ title, description, amount, onChange }) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     setChecked(!checked);
-
-    Object.keys(localStorage).forEach((key) => {
-      if (key.includes("Online service") || key.includes("Larger storage") || key.includes("Customizable Profile")) {
-        localStorage.removeItem(key);
-      }
-    });
-    // Save the checked state, amount, and title to local storage
-    localStorage.setItem("addons", title);
-    localStorage.setItem("addonplan", amount);
-
+    onChange(!checked, e); // Notify the parent component about the checkbox change
   };
+
   const cardStyle = {
     backgroundColor: checked ? "#E6E6FA" : "white",
     border: `2px solid ${checked ? "black" : "gray"}`,
   };
+
   return (
     <div
       className="flex flex-row justify-between px-[40px] rounded-[10px] border-2 border-primary py-[10px] m-[10px] cursor-pointer w-[500px] "
@@ -45,3 +38,4 @@ const AddOnCard = ({ title, description, amount }) => {
 };
 
 export default AddOnCard;
+
