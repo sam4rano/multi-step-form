@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
 
 const Summary = () => {
   const [selectedItems, setSelectedItems] = useState([]);
@@ -47,8 +48,10 @@ const Summary = () => {
   };
 
   return (
+    <div className="flex flex-row">
+      <Sidebar />
     <form onSubmit={handleSubmit} className="pt-[40px] mx-auto">
-      <div className="mx-auto">
+      <div className="mx-auto pb-[20px]">
         <h1 className="font-bold text-[30px]">Finishing Up</h1>
         <h4>Double check everything looks ok before confirming</h4>
       </div>
@@ -82,6 +85,7 @@ const Summary = () => {
         </div>
       </div>
     </form>
+    </div>
   );
 };
 

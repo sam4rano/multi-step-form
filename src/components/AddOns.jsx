@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AddOnCard from "./AddOnCard";
+import Sidebar from "./Sidebar";
 
 const AddOns = () => {
   const navigate = useNavigate();
@@ -30,7 +31,10 @@ const AddOns = () => {
   ];
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="flex flex-row">
+      <Sidebar />
+
+    <form onSubmit={handleSubmit} className="pl-[60px]">
       <div className="w-[490px] mx-auto pt-[40px]">
         <h1 className="font-bold text-[20px]">Pick Add-Ons</h1>
         <h3>Add-on helps enhance your gaming experience</h3>
@@ -55,6 +59,7 @@ const AddOns = () => {
         </button>
       </div>
     </form>
+    </div>
   );
 };
 

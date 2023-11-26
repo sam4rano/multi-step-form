@@ -4,6 +4,7 @@ import Card from "./Card";
 import Arcade from "../assets/images/arcade.svg";
 import Advance from "../assets/images/advanced.svg";
 import Pro from "../assets/images/pro.svg";
+import Sidebar from "./Sidebar";
 import { useNavigate, Link } from "react-router-dom";
 
 const Plans = () => {
@@ -54,7 +55,10 @@ const Plans = () => {
   
   
   return (
-    <form className="py-[50px] " onSubmit={handleSubmit}>
+    <div className="flex flex-row">
+      <Sidebar />
+
+    <form className="py-[50px] pl-[70px] " onSubmit={handleSubmit}>
       <div className="w-[580px] mx-auto">
         <h1 className="font-bold text-[20px]">SELECT YOUR PLANS</h1>
         <h3>You have the option of monthly or yearly billings</h3>
@@ -85,7 +89,7 @@ const Plans = () => {
         </div>
       </div>
       <div className="flex flex-row justify-between mx-auto pt-[40px] max-w-[580px]">
-        <Link to="/">Go Back</Link>
+        <Link to="/" className="">Go Back</Link>
         <button
           type="submit"
           className="bg-primary px-[15px] py-[5px] text-neutral rounded-[5px]"
@@ -94,6 +98,7 @@ const Plans = () => {
         </button>
       </div>
     </form>
+    </div>
   );
 };
 
