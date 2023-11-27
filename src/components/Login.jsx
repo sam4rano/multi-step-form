@@ -43,7 +43,7 @@ const Login = () => {
           type="text"
           value={name}
           onChange={handleName}
-          className="bg-gray-50 border border-gray-300 placeholder:p-[10px] text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 placeholder:p-[10px] text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Vanessa Mint"
           required
         />
