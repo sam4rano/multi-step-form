@@ -1,7 +1,6 @@
 import React from "react";
 import SubImage from "../assets/images/thank-you.svg";
 import Sidebar from "./Sidebar";
-import imgMobile from "../assets/images/mobile.svg"
 import Mobilebar from "./MobileBar";
 
 const Submitted = () => {

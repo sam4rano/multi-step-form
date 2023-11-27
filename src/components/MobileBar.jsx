@@ -1,21 +1,8 @@
-import { useState, useRef } from "react";
-import BgImage from "../assets/images/bg-sidebar-desktop.svg";
-import { useLocation, NavLink } from "react-router-dom";
-import imgMobile from "../assets/images/mobile.svg"
+import {  NavLink } from "react-router-dom";
+
 import "./mobilebar.css"
 
 const Mobilebar = () => {
-
-
-//   const sidebarStyle = {
-//     backgroundImage: `url(${imgMobile})`,
-//     backgroundPosition: "center",
-//     backgroundRepeat: "no-repeat",
-//     backgroundSize: "cover",
-// 	height:"200px",
-//     width: "100%",
-//   };
-
 
   const sideBarItems = [
     { id: 1, title: "STEP ONE", subtitle: "YOUR INFO", link: "/" },

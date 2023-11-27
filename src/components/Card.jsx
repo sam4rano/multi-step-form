@@ -9,12 +9,9 @@ const Card = ({ image, title, amount, months, isClicked, onClick, checked}) => {
       }
     });
     
-  
-    // Set the selected plan and its amount
     localStorage.setItem("selectedPlan", title);
     localStorage.setItem(`${title}_amount`, amount);
   
-    // Set the billing type (monthly or yearly)
     localStorage.setItem("billingType", checked ? "yearly":"monthly");
   
     onClick()
