@@ -1,6 +1,7 @@
 import Login from "./Login";
 import Sidebar from "./Sidebar";
 import imgMobile from "../assets/images/mobile.svg";
+import Mobilebar from "./MobileBar";
 
 const Container = () => {
   return (
@@ -8,8 +9,8 @@ const Container = () => {
       <div className="md:hidden">
         <Sidebar />
       </div>
-      <div className="lg:hidden h-[200px] z-10">
-        <img src={imgMobile} alt="img" className="w-full" />
+      <div className="lg:hidden h-[100px]">
+        <Mobilebar />
       </div>
 
       <Login />
