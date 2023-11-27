@@ -1,19 +1,20 @@
 import { useState, useRef } from "react";
 import BgImage from "../assets/images/bg-sidebar-desktop.svg";
 import { useLocation, NavLink } from "react-router-dom";
+import "./sidebar.css"
 
-const Sidebar = ({ setActiveStep }) => {
+const Sidebar = () => {
 
 
-  const sidebarStyle = {
-    backgroundImage: `url(${BgImage})`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    padding: "20px",
-    height: "100vh",
-    width: "18vw",
-  };
+  // const sidebarStyle = {
+  //   backgroundImage: `url(${BgImage})`,
+  //   backgroundPosition: "center",
+  //   backgroundRepeat: "no-repeat",
+  //   backgroundSize: "cover",
+  //   padding: "20px",
+  //   height: "100vh",
+  //   width: "18vw",
+  // };
 
 
   const sideBarItems = [
@@ -24,7 +25,7 @@ const Sidebar = ({ setActiveStep }) => {
   ];
 
   return (
-    <div style={sidebarStyle}>
+    <div className="img_container">
       <div className="flex flex-col gap-[20px] pt-[40px]">
         {sideBarItems.map((item, index) => (
           <NavLink key={index} to={item.link} className="flex gap-4 pointer-events-none">

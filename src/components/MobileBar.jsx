@@ -2,18 +2,19 @@ import { useState, useRef } from "react";
 import BgImage from "../assets/images/bg-sidebar-desktop.svg";
 import { useLocation, NavLink } from "react-router-dom";
 import imgMobile from "../assets/images/mobile.svg"
+import "./mobilebar.css"
 
 const Mobilebar = () => {
 
 
-  const sidebarStyle = {
-    backgroundImage: `url(${imgMobile})`,
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-	height:"200px",
-    width: "100%",
-  };
+//   const sidebarStyle = {
+//     backgroundImage: `url(${imgMobile})`,
+//     backgroundPosition: "center",
+//     backgroundRepeat: "no-repeat",
+//     backgroundSize: "cover",
+// 	height:"200px",
+//     width: "100%",
+//   };
 
 
   const sideBarItems = [
@@ -24,7 +25,8 @@ const Mobilebar = () => {
   ];
 
   return (
-    <div style={sidebarStyle} className="flex flex-row justify-center align-middle">
+    <div className="img_container flex  flex-row justify-center align-middle">
+		
         {sideBarItems.map((item, index) => (
           <NavLink key={index} to={item.link} className="flex pt-[40px] pointer-events-none justify-around flex-row pl-[20px]">
             {({ isActive }) => (
