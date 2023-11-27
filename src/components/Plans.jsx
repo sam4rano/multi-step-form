@@ -76,7 +76,7 @@ const Plans = () => {
               <h3>You have the option of monthly or yearly billings</h3>
             </div>
           </div>
-          <div className="flex flex-row md:flex-col justify-center lg:py-[20px] md:w-[360px] lg:w-[500px] mx-auto">
+          <div className="flex flex-row md:flex-col justify-center lg:py-[20px] md:w-[340px] lg:w-[500px] mx-auto">
             {dataPlans.map((plan) => (
               <Card
                 key={plan.id}
@@ -90,7 +90,7 @@ const Plans = () => {
               />
             ))}
           </div>
-          <div className="max-w-[590px] mx-auto bg-bg-grey rounded-[10px] md:w-[340px]">
+          <div className="max-w-[590px] mx-auto bg-bg-grey rounded-[10px] md:w-[320px]">
             <div className="flex justify-center mx-auto ">
               <label className="pt-[10px]">Monthly</label>
               <Switch
@@ -102,7 +102,7 @@ const Plans = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row justify-between mx-auto pt-[40px] max-w-[580px] md:w-[340px]">
+        <div className="flex flex-row justify-between mx-auto pt-[40px] max-w-[580px] md:w-[320px]">
           <Link to="/" className="">
             Go Back
           </Link>

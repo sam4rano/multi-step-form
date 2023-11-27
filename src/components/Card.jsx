@@ -25,7 +25,7 @@ const Card = ({ image, title, amount, months, isClicked, onClick, checked}) => {
   };
   return (
     <div
-      className="flex flex-col md:flex-row md:align-middle md:justify-around px-[40px] rounded-[10px] border-2 border-primary py-[10px] m-[10px] cursor-pointer  "
+      className="flex flex-col md:flex-row md:align-middle md:justify-around px-[40px] md:px-[20px] rounded-[10px] border-2 border-primary py-[10px] m-[10px] cursor-pointer  "
       style={cardStyle}
       onClick={handleClick}
     >

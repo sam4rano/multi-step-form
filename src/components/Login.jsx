@@ -6,9 +6,14 @@ const Login = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
+  const [emailError, setEmailError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email.trim()) {
+      setEmailError('This field is required');
+      return; 
+    }
     navigate("/plans");
   };
 
@@ -17,6 +22,10 @@ const Login = () => {
   };
   const handleEmail = (e) => {
     setEmail(e.target.value);
+    if (!email.trim()) {
+      setEmailError('This field is required');
+      return; 
+    }
   };
   const handleNumber = (e) => {
     setNumber(e.target.value);
@@ -34,7 +43,7 @@ const Login = () => {
           type="text"
           value={name}
           onChange={handleName}
-          className="bg-gray-50 border border-gray-300 placeholder:p-[10px] text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 placeholder:p-[10px] text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Vanessa Mint"
           required
         />
@@ -48,9 +57,15 @@ const Login = () => {
           value={email}
           onChange={handleEmail}
           placeholder="vanessamint@gmail.com"
-          className="bg-gray-50 border border-gray-300 placeholder:p-[10px] text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border border-gray-300 placeholder:p-[10px] text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           required
         />
+        {emailError && (
+          <div className="flex justify-end">
+
+            <p className="text-red-500 text-sm">{emailError}</p>
+          </div>
+        )}
       </div>
       <div className="pb-[20px]">
         <label className="block text-[20px] font-medium">
@@ -63,7 +78,7 @@ const Login = () => {
           placeholder="e.g +123456789"
           pattern="^[+0-9]+$"
           title="Please enter a valid phone number"
-          className="bg-gray-50 border placeholder:p-[10px] border-gray-300 text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="bg-gray-50 border placeholder:p-[10px] border-gray-300 text-gray-900 text-[20px] rounded-[10px] focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           required
         />
       </div>

@@ -63,7 +63,7 @@ const AddOns = () => {
       </div>
 
       <form onSubmit={handleSubmit} className=" mx-auto md:z-30 md:bg-neutral rounded-[10px] md:overflow-hidden">
-        <div className="w-[490px] lg:mx-auto pt-[40px] md:w-[400px] md:mx-auto md:pt-[-10px] md:flex md:justify-center md:flex-col md:pl-[10px]">
+        <div className="w-[490px] lg:mx-auto pt-[40px] md:w-[360px] md:mx-auto md:pt-[-10px] md:flex md:justify-center md:flex-col md:pl-[10px]">
           <h1 className="font-bold text-[20px]">Pick Add-Ons</h1>
           <h3>Add-on helps enhance your gaming experience</h3>
         </div>
@@ -80,7 +80,7 @@ const AddOns = () => {
             />
           ))}
         </div>
-        <div className="flex flex-row justify-between mx-auto w-[500px] pt-[40px] md:w-[360px]">
+        <div className="flex flex-row justify-between mx-auto w-[500px] pt-[40px] md:w-[320px]">
           <Link to="/plans">Go Back</Link>
           <button
             type="submit"

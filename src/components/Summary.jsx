@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import imgMobile from "../assets/images/mobile.svg";
 import Mobilebar from "./MobileBar";
 
 const Summary = () => {
@@ -64,15 +63,15 @@ const Summary = () => {
           <h4 className="md:w-[320px]">Double check everything looks ok before confirming</h4>
         </div>
         <div className="flex flex-col gap-[20px] md:w-[340px] md:mx-auto">
-          <div className="bg-bg-grey flex flex-col gap-[40px] py-[10px] px-[10px] rounded-[10px]">
-            <div className="flex flex-row justify-around">
+          <div className="md:bg-bg-grey md:w-[330px] flex flex-col gap-[40px] py-[10px] px-[10px] rounded-[10px]">
+            <div className="flex flex-row justify-around ">
               <h2>
                 {selectedPlan}({billingType})
               </h2>
               <h2>${selectedItems}/mo</h2>
             </div>
             <hr className="w-full text-black"/>
-            <div className="flex flex-col justify-around">
+            <div className="flex flex-col justify-around md:w-[280px]">
               {selectedAddon.map((addon, index) => (
                 <div key={index} className="flex flex-row justify-center ">
                   <div className="flex flex-col pr-[150px] md:pr-[110px]">{addon.title}</div>
@@ -80,17 +79,17 @@ const Summary = () => {
                 </div>
               ))}
             </div>
+          </div>
             <div className="flex flex-row justify-around">
               <h2>Total(per month)</h2>
-              <h2>+${totalAmount}</h2>
+              <h2 className="text-blue-500">+${totalAmount}</h2>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-between mx-auto w-[500px] pt-[40px] md:w-[360px]">
+          <div className="flex flex-row justify-between mx-auto w-[500px] pt-[40px] md:w-[340px]">
             <Link to="/addons">Go Back</Link>
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-300 px-[15px] py-[5px] text-neutral rounded-[5px]"
+              className="bg-blue-600 hover:bg-blue-300 px-[15px] py-[5px] text-neutral rounded-[5px]"
             >
               Confirm
             </button>

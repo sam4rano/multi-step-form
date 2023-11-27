@@ -1,6 +1,5 @@
 import Login from "./Login";
 import Sidebar from "./Sidebar";
-import imgMobile from "../assets/images/mobile.svg";
 import Mobilebar from "./MobileBar";
 
 const Container = () => {

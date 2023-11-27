@@ -16,7 +16,7 @@ const AddOnCard = ({ title, description, amount, onChange }) => {
 
   return (
     <div
-      className="flex flex-row justify-between lg:px-[40px] md:flex-row md:align-middle md:justify-around md:p-[10px] rounded-[10px] border-2 border-primary lg:py-[10px] lg:m-[10px] md:m-[10px] cursor-pointer w-[500px] md:w-[360px] md:mx-auto"
+      className="flex flex-row justify-between lg:px-[40px] md:flex-row md:items-center md:justify-around rounded-[10px] border-2 border-primary lg:py-[10px] md:py-[5px] lg:m-[10px] md:my-[10px] cursor-pointer w-[500px] md:w-[320px] md:mx-auto"
       style={cardStyle}
     >
       <div className="flex flex-row justify-around">
