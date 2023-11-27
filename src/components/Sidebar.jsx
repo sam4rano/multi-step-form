@@ -12,7 +12,7 @@ const Sidebar = ({ setActiveStep }) => {
     backgroundSize: "cover",
     padding: "20px",
     height: "100vh",
-    width: "30%",
+    width: "18vw",
   };
 
 
@@ -30,7 +30,7 @@ const Sidebar = ({ setActiveStep }) => {
           <NavLink key={index} to={item.link} className="flex gap-4 pointer-events-none">
             {({ isActive }) => (
               <>
-                <div className={`rounded-full flex items-center justify-center h-8 w-8  shrink-0 ${isActive? "bg-blue-50": "bg-blue-500"} border border-neutral text-neutral`}>
+                <div className={`rounded-full flex items-center justify-center h-8 w-8  shrink-0 ${isActive? "bg-blue-50 text-black": "bg-blue-500 "} border border-neutral text-neutral`}>
                   <span className={isActive ? "active" : ""}>{item.id}</span>
                 </div>
                 <div>

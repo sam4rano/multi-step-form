@@ -23,7 +23,7 @@ const Login = () => {
   };
 
   return (
-    <form className="max-w-sm mx-auto md:rounded-[20px] md:p-[30px] md:z-30 md:bg-neutral md:w-[360px]" onSubmit={handleSubmit}>
+    <form className=" mx-auto md:rounded-[20px] md:p-[30px] md:bg-neutral md:w-[360px]" onSubmit={handleSubmit}>
       <div className="pt-[50px] md:pt-[10px] md:pb-[5px]">
         <p className="text-[30px] font-bold ">Personal Info</p>
         <h5>Please provide your name, email address, and phone number</h5>

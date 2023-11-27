@@ -5,7 +5,7 @@ import Mobilebar from "./MobileBar";
 
 const Container = () => {
   return (
-    <div className="flex flex-row justify-around md:flex-col">
+    <div className="flex flex-row justify-evenly md:flex-col">
       <div className="md:hidden">
         <Sidebar />
       </div>
