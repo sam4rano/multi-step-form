@@ -6,7 +6,7 @@ import Advance from "../assets/images/advanced.svg";
 import Pro from "../assets/images/pro.svg";
 import Sidebar from "./Sidebar";
 import { useNavigate, Link } from "react-router-dom";
-import imgMobile from "../assets/images/mobile.svg";
+
 import Mobilebar from "./MobileBar";
 
 const Plans = () => {
@@ -108,7 +108,7 @@ const Plans = () => {
           </Link>
           <button
             type="submit"
-            className="bg-primary px-[15px] py-[5px] text-neutral rounded-[5px]"
+            className="bg-blue-500 hover:bg-blue-300 px-[15px] py-[5px] text-neutral rounded-[5px]"
           >
             Next Step
           </button>

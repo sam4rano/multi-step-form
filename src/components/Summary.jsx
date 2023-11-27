@@ -41,6 +41,9 @@ const Summary = () => {
     }
   }, []);
 
+  // Calculate total amount including addon amounts
+  const totalAmount = selectedItems + selectedAddon.reduce((acc, addon) => acc + addon.amount, 0);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/submitted");
@@ -68,18 +71,18 @@ const Summary = () => {
               </h2>
               <h2>${selectedItems}/mo</h2>
             </div>
-            <hr />
+            <hr className="w-full text-black"/>
             <div className="flex flex-col justify-around">
               {selectedAddon.map((addon, index) => (
-                <div key={index} className="flex flex-row ">
-                  <div className="flex flex-col pr-[260px] md:pr-[110px]">{addon.title}</div>
+                <div key={index} className="flex flex-row justify-center ">
+                  <div className="flex flex-col pr-[150px] md:pr-[110px]">{addon.title}</div>
                   <p className="">${addon.amount}</p>
                 </div>
               ))}
             </div>
             <div className="flex flex-row justify-around">
               <h2>Total(per month)</h2>
-              <h2>+${Number(selectedItems)}</h2>
+              <h2>+${totalAmount}</h2>
             </div>
           </div>
 
@@ -87,7 +90,7 @@ const Summary = () => {
             <Link to="/addons">Go Back</Link>
             <button
               type="submit"
-              className="bg-primary px-[15px] py-[5px] text-neutral rounded-[5px]"
+              className="bg-blue-500 hover:bg-blue-300 px-[15px] py-[5px] text-neutral rounded-[5px]"
             >
               Confirm
             </button>

@@ -84,7 +84,7 @@ const AddOns = () => {
           <Link to="/plans">Go Back</Link>
           <button
             type="submit"
-            className="bg-primary px-[15px] py-[5px] text-neutral rounded-[5px]"
+            className="bg-blue-500 hover:bg-blue-300 px-[15px] py-[5px] text-neutral rounded-[5px]"
           >
             Next Step
           </button>

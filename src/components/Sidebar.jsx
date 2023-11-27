@@ -25,7 +25,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="img_container">
+    <div className="sidebar_img">
       <div className="flex flex-col gap-[20px] pt-[40px]">
         {sideBarItems.map((item, index) => (
           <NavLink key={index} to={item.link} className="flex gap-4 pointer-events-none">
