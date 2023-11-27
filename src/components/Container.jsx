@@ -1,23 +1,18 @@
-import { useState, useContext } from "react";
 import Login from "./Login";
 import Sidebar from "./Sidebar";
-import AddOns from "./AddOns";
-import Plans from "./Plans";
-import Summary from "./Summary";
-import Submitted from "./Submitted";
-import FormProvider from "../context/FormContexts";
+import imgMobile from "../assets/images/mobile.svg";
 
 const Container = () => {
-  const [activeStep, setActiveStep] = useState(1);
-
   return (
-    <div className="flex flex-row justify-around">
-      <Sidebar setActiveStep={setActiveStep} />
-      {activeStep === 1 && <Login />}
-      {activeStep === 2 && <Plans />}
-      {activeStep === 3 && <AddOns />}
-      {activeStep === 4 && <Summary />}
-      {activeStep === 5 && <Submitted />}
+    <div className="flex flex-row justify-around md:flex-col">
+      <div className="md:hidden">
+        <Sidebar />
+      </div>
+      <div className="lg:hidden h-[200px] z-10">
+        <img src={imgMobile} alt="img" className="w-full" />
+      </div>
+
+      <Login />
     </div>
   );
 };

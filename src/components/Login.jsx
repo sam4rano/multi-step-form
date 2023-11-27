@@ -23,13 +23,13 @@ const Login = () => {
   };
 
   return (
-    <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
-      <div className="pt-[50px]">
-        <p className="text-[35px] font-bold ">Personal Info</p>
+    <form className="max-w-sm mx-auto md:rounded-[20px] md:p-[30px] md:z-30 md:bg-neutral md:w-[360px]" onSubmit={handleSubmit}>
+      <div className="pt-[50px] md:pt-[10px] md:pb-[5px]">
+        <p className="text-[30px] font-bold ">Personal Info</p>
         <h5>Please provide your name, email address, and phone number</h5>
       </div>
       <div className="pb-[20px]">
-        <label className="block mb-4 text-[20px] font-medium">Name</label>
+        <label className="block text-[20px] font-medium">Name</label>
         <input
           type="text"
           value={name}
@@ -40,7 +40,7 @@ const Login = () => {
         />
       </div>
       <div className="pb-[20px]">
-        <label className="block mb-4 text-[20px] font-medium">
+        <label className="block text-[20px] font-medium">
           Email Address
         </label>
         <input
@@ -53,7 +53,7 @@ const Login = () => {
         />
       </div>
       <div className="pb-[20px]">
-        <label className="block mb-4 text-[20px] font-medium">
+        <label className="block text-[20px] font-medium">
           Phone Number
         </label>
         <input

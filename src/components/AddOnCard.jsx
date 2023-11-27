@@ -4,9 +4,9 @@ import Checkbox from "@mui/material/Checkbox";
 const AddOnCard = ({ title, description, amount, onChange }) => {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = () => {
     setChecked(!checked);
-    onChange(!checked, e); // Notify the parent component about the checkbox change
+    onChange(!checked);
   };
 
   const cardStyle = {
@@ -16,9 +16,8 @@ const AddOnCard = ({ title, description, amount, onChange }) => {
 
   return (
     <div
-      className="flex flex-row justify-between px-[40px] rounded-[10px] border-2 border-primary py-[10px] m-[10px] cursor-pointer w-[500px] "
+      className="flex flex-row justify-between lg:px-[40px] md:flex-row md:align-middle md:justify-around md:p-[10px] rounded-[10px] border-2 border-primary lg:py-[10px] lg:m-[10px] md:m-[10px] cursor-pointer w-[500px] md:w-[360px] md:mx-auto"
       style={cardStyle}
-      onClick={handleChange}
     >
       <div className="flex flex-row justify-around">
         <Checkbox
@@ -38,4 +37,3 @@ const AddOnCard = ({ title, description, amount, onChange }) => {
 };
 
 export default AddOnCard;
-

@@ -1,18 +1,18 @@
 import { useState, useRef } from "react";
 import BgImage from "../assets/images/bg-sidebar-desktop.svg";
 import { useLocation, NavLink } from "react-router-dom";
+import imgMobile from "../assets/images/mobile.svg"
 
-const Sidebar = ({ setActiveStep }) => {
+const Mobilebar = () => {
 
 
   const sidebarStyle = {
-    backgroundImage: `url(${BgImage})`,
+    backgroundImage: `url(${imgMobile})`,
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    padding: "20px",
-    height: "100vh",
-    width: "30%",
+	height:"200px",
+    width: "100%",
   };
 
 
@@ -24,26 +24,22 @@ const Sidebar = ({ setActiveStep }) => {
   ];
 
   return (
-    <div style={sidebarStyle}>
-      <div className="flex flex-col gap-[20px] pt-[40px]">
+    <div style={sidebarStyle} className="flex flex-row justify-center align-middle">
         {sideBarItems.map((item, index) => (
-          <NavLink key={index} to={item.link} className="flex gap-4 pointer-events-none">
+          <NavLink key={index} to={item.link} className="flex pt-[40px] pointer-events-none justify-around flex-row pl-[20px]">
             {({ isActive }) => (
               <>
-                <div className={`rounded-full flex items-center justify-center h-8 w-8  shrink-0 ${isActive? "bg-blue-50": "bg-blue-500"} border border-neutral text-neutral`}>
+                <div className={`rounded-full flex items-center justify-center h-8 w-8  shrink-0 ${isActive? "bg-blue-50 text-black": "bg-blue-500 "} border border-neutral text-neutral`}>
                   <span className={isActive ? "active" : ""}>{item.id}</span>
                 </div>
-                <div>
-                  <h2 className="text-bg-grey">{item.title}</h2>
-                  <h1 className="text-neutral">{item.subtitle}</h1>
-                </div>
+                
               </>
             )}
           </NavLink>
         ))}
-      </div>
+      
     </div>
   );
 };
 
-export default Sidebar;
+export default Mobilebar;
