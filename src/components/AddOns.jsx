@@ -1,10 +1,11 @@
-
-
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AddOnCard from "./AddOnCard";
 import Sidebar from "./Sidebar";
-import imgMobile from "../assets/images/mobile.svg";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import Mobilebar from "./MobileBar";
 
 const AddOns = () => {
@@ -12,7 +13,6 @@ const AddOns = () => {
   const [selectedAddons, setSelectedAddons] = useState([]);
 
   const handleAddOnChange = (title, amount, isChecked) => {
-    // Update the selected addons array based on the checkbox change
     if (isChecked) {
       setSelectedAddons((prevAddons) => [...prevAddons, { title, amount }]);
     } else {
@@ -25,11 +25,12 @@ const AddOns = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Save the selected addons to local storage
-    localStorage.setItem("addons", JSON.stringify(selectedAddons));
-
-    // Navigate to the next step
-    navigate("/summary");
+    if (selectedAddons.length > 0) {
+      localStorage.setItem("addons", JSON.stringify(selectedAddons));
+      navigate("/summary");
+    } else {
+      toast.error("Please select at least one addon before proceeding.");
+    }
   };
 
   const addon = [
@@ -62,7 +63,10 @@ const AddOns = () => {
         <Mobilebar />
       </div>
 
-      <form onSubmit={handleSubmit} className=" mx-auto md:z-30 md:bg-neutral rounded-[10px] md:overflow-hidden">
+      <form
+        onSubmit={handleSubmit}
+        className=" mx-auto md:z-30 md:bg-neutral rounded-[10px] md:overflow-hidden"
+      >
         <div className="w-[490px] lg:mx-auto pt-[40px] md:w-[360px] md:mx-auto md:pt-[-10px] md:flex md:justify-center md:flex-col md:pl-[10px]">
           <h1 className="font-bold text-[20px]">Pick Add-Ons</h1>
           <h3>Add-on helps enhance your gaming experience</h3>
@@ -90,6 +94,7 @@ const AddOns = () => {
           </button>
         </div>
       </form>
+      <ToastContainer position="top-right" autoClose={1000} />
     </div>
   );
 };

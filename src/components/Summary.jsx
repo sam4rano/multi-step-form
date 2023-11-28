@@ -63,7 +63,7 @@ const Summary = () => {
           <h4 className="md:w-[320px]">Double check everything looks ok before confirming</h4>
         </div>
         <div className="flex flex-col gap-[20px] md:w-[340px] md:mx-auto">
-          <div className="md:bg-bg-grey md:w-[330px] flex flex-col gap-[40px] py-[10px] px-[10px] rounded-[10px]">
+          <div className="md:bg-bg-grey bg-bg-grey md:w-[330px] flex flex-col gap-[40px] py-[10px] px-[10px] rounded-[10px]">
             <div className="flex flex-row justify-around ">
               <h2>
                 {selectedPlan}({billingType})

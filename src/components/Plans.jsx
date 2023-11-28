@@ -6,6 +6,9 @@ import Advance from "../assets/images/advanced.svg";
 import Pro from "../assets/images/pro.svg";
 import Sidebar from "./Sidebar";
 import { useNavigate, Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import Mobilebar from "./MobileBar";
 
@@ -45,7 +48,15 @@ const Plans = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/addons");
+
+    if (selectedPlan !== null) {
+      navigate("/addons");
+    } else {
+      toast.error(`Please select a plan before proceeding.`, {
+        position: "top-right",
+        autoClose: 1000,
+      });
+    }
   };
 
   const handleCardClick = (planId) => {
@@ -114,6 +125,7 @@ const Plans = () => {
           </button>
         </div>
       </form>
+      <ToastContainer position="top-right" autoClose={1000} />
     </div>
   );
 };
