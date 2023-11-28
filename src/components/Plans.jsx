@@ -50,7 +50,7 @@ const Plans = () => {
     e.preventDefault();
 
     if (selectedPlan !== null) {
-      navigate("/addons");
+      navigate("/addons", {state:{checked}});
     } else {
       toast.error(`Please select a plan before proceeding.`, {
         position: "top-right",
@@ -127,6 +127,7 @@ const Plans = () => {
       </form>
       <ToastContainer position="top-right" autoClose={1000} />
     </div>
+  
   );
 };
 

@@ -6,13 +6,14 @@ const AddOnCard = ({ title, description, amount, onChange }) => {
 
   const handleChange = () => {
     setChecked(!checked);
-    onChange(!checked);
+    onChange(title, amount, !checked);
   };
 
   const cardStyle = {
     backgroundColor: checked ? "#E6E6FA" : "white",
     border: `2px solid ${checked ? "black" : "gray"}`,
   };
+  const storedBillingType = localStorage.getItem("billingType");
 
   return (
     <div
@@ -31,7 +32,7 @@ const AddOnCard = ({ title, description, amount, onChange }) => {
           <h4>{description}</h4>
         </div>
       </div>
-      <p className="pt-[15px]">${amount}/mo</p>
+      <p className="pt-[15px]">${amount}/{storedBillingType === 'yearly' ? 'yr' : 'mo'}</p>
     </div>
   );
 };

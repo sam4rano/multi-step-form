@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useLocation} from "react-router-dom";
 import AddOnCard from "./AddOnCard";
 import Sidebar from "./Sidebar";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-
 
 import Mobilebar from "./MobileBar";
 
@@ -12,7 +10,11 @@ const AddOns = () => {
   const navigate = useNavigate();
   const [selectedAddons, setSelectedAddons] = useState([]);
 
+  const location = useLocation();
+  const isTrue = location.state?.checked;
+  
   const handleAddOnChange = (title, amount, isChecked) => {
+    
     if (isChecked) {
       setSelectedAddons((prevAddons) => [...prevAddons, { title, amount }]);
     } else {
@@ -20,10 +22,12 @@ const AddOns = () => {
         prevAddons.filter((addon) => addon.title !== title)
       );
     }
+    console.log('click', isChecked);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+   
 
     if (selectedAddons.length > 0) {
       localStorage.setItem("addons", JSON.stringify(selectedAddons));
@@ -38,19 +42,22 @@ const AddOns = () => {
       id: 1,
       title: "Online Service",
       description: "Access to multiplayer games",
-      amount: 1,
+      monthlyamount: 1,
+      yearlyamount: 10,
     },
     {
       id: 2,
       title: "Larger storage",
       description: "Extra 1TB of cloud save",
-      amount: 2,
+      monthlyamount: 2,
+      yearlyamount: 20,
     },
     {
       id: 3,
       title: "Customizable Profile",
       description: "Custom theme on your profile",
-      amount: 2,
+      monthlyamount: 2,
+      yearlyamount: 20,
     },
   ];
 
@@ -59,7 +66,7 @@ const AddOns = () => {
       <div className="md:hidden">
         <Sidebar />
       </div>
-      <div className="lg:hidden h-[100px] md:overflow-hidden">
+      <div className="lg:hidden h-[100px]">
         <Mobilebar />
       </div>
 
@@ -77,9 +84,9 @@ const AddOns = () => {
               key={items.id}
               title={items.title}
               description={items.description}
-              amount={items.amount}
+              amount={isTrue ? items.yearlyamount : items.monthlyamount}
               onChange={(isChecked) =>
-                handleAddOnChange(items.title, items.amount, isChecked)
+                handleAddOnChange(items.title, isTrue ? items.yearlyamount : items.monthlyamount,isChecked)
               }
             />
           ))}

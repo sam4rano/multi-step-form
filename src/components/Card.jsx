@@ -29,7 +29,7 @@ const Card = ({ image, title, amount, months, isClicked, onClick, checked}) => {
       <img src={image} alt={title} className="w-[50px] h-[50px] mb-[30px] md:mb-[0px]" />
       <div className="card-content">
         <h2>{title}</h2>
-        <p>${amount}/mo</p>
+        <p>${amount}/{checked === true ? 'yr':'mo'}</p>
         <p className="w-[100px]">{months}</p>
       </div>
     </div>
