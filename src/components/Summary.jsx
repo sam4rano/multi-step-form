@@ -71,7 +71,7 @@ const Summary = () => {
               </h2>
               <h2>${selectedItems}/mo</h2>
             </div>
-            <hr className="w-full text-black"/>
+            <hr className="w-full border-gray-500"/>
             <div className="flex flex-col justify-around md:w-[280px]">
               {selectedAddon.map((addon, index) => (
                 <div key={index} className="flex flex-row justify-center ">
