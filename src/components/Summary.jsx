@@ -64,26 +64,26 @@ const Summary = () => {
         </div>
         <div className="flex flex-col gap-[20px] md:w-[340px] md:mx-auto">
           <div className="md:bg-bg-grey bg-bg-grey md:w-[330px] flex flex-col gap-[40px] py-[10px] px-[10px] rounded-[10px]">
-            <div className="flex flex-row justify-around ">
-              <h2>
+            <div className="flex flex-row justify-around font-bold ">
+              <h2 className="">
                 {selectedPlan}({billingType})
                 <h2><Link to="/plans" className="text-blue-500 hover:text-blue-300 text underline">(change)</Link></h2>
               </h2>
-              <h2>${selectedItems}/mo</h2>
+              <h2>${selectedItems}/{billingType === 'yearly' ? 'yr' : 'mo'}</h2>
             </div>
             <hr className="w-full border-gray-500"/>
             <div className="flex flex-col justify-around md:w-[280px]">
               {selectedAddon.map((addon, index) => (
                 <div key={index} className="flex flex-row justify-center ">
                   <div className="flex flex-col pr-[150px] md:pr-[110px]">{addon.title}</div>
-                  <p className="">${addon.amount}/mo</p>
+                  <p className="">${addon.amount}/{billingType === 'yearly' ? 'yr' : 'mo'}</p>
                 </div>
               ))}
             </div>
           </div>
             <div className="flex flex-row justify-around">
-              <h2>Total(per month)</h2>
-              <h2 className="text-blue-500">+${totalAmount}/mo</h2>
+              <h2>Total({billingType === 'yearly' ? 'per year' : 'per month'})</h2>
+              <h2 className="text-blue-500">+${totalAmount}/{billingType === 'yearly' ? 'yr' : 'mo'}</h2>
             </div>
 
           <div className="flex flex-row justify-between mx-auto w-[500px] pt-[40px] md:w-[340px]">
