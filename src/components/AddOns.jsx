@@ -59,7 +59,7 @@ const AddOns = () => {
       <div className="md:hidden">
         <Sidebar />
       </div>
-      <div className="lg:hidden h-[100px]">
+      <div className="lg:hidden h-[100px] md:overflow-hidden">
         <Mobilebar />
       </div>
 

@@ -70,7 +70,7 @@ const Plans = () => {
       <div className="md:hidden">
         <Sidebar />
       </div>
-      <div className="lg:hidden h-[200px]">
+      <div className="lg:hidden h-[200px] md:overflow-hidden">
         <Mobilebar />
       </div>
 
