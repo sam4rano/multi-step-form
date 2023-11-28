@@ -40,7 +40,7 @@ const Summary = () => {
     }
   }, []);
 
-  // Calculate total amount including addon amounts
+
   const totalAmount = selectedItems + selectedAddon.reduce((acc, addon) => acc + addon.amount, 0);
 
   const handleSubmit = (e) => {
@@ -65,10 +65,10 @@ const Summary = () => {
         <div className="flex flex-col gap-[20px] md:w-[340px] md:mx-auto">
           <div className="md:bg-bg-grey bg-bg-grey md:w-[330px] flex flex-col gap-[40px] py-[10px] px-[10px] rounded-[10px]">
             <div className="flex flex-row justify-around font-bold ">
-              <h2 className="">
+              <div className="">
                 {selectedPlan}({billingType})
                 <h2><Link to="/plans" className="text-blue-500 hover:text-blue-300 text underline">(change)</Link></h2>
-              </h2>
+              </div>
               <h2>${selectedItems}/{billingType === 'yearly' ? 'yr' : 'mo'}</h2>
             </div>
             <hr className="w-full border-gray-500"/>

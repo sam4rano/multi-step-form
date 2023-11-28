@@ -1,4 +1,4 @@
-# React + Vite
+# Multi step form
 Building out multi-step form and get it looking as close to the design as possible.
 
 Users should be able to:
